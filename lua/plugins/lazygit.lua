@@ -11,13 +11,18 @@ local lazygit = Terminal:new({
 		border = "single",
 		-- 每次打开时以当前窗口为基准计算 70% 的尺寸。
 		width = function()
-			return math.floor(vim.api.nvim_win_get_width(0) * 0.7)
+			return math.floor(vim.api.nvim_win_get_width(0) * 0.8)
 		end,
 		height = function()
-			return math.floor(vim.api.nvim_win_get_height(0) * 0.7)
+			return math.floor(vim.api.nvim_win_get_height(0) * 0.8)
 		end,
 		title_pos = "left",
 	},
+	on_open = function(term)
+		-- LazyGit 需要终端模式接收按键；按 Esc 后会进入普通模式。
+		-- 状态栏中的表达式会在模式切换时重新计算。
+		vim.wo[term.window].statusline = " LazyGit  |  %{mode() ==# 't' ? 'TERMINAL' : 'NORMAL'} "
+	end,
 })
 
 -- M 是此模块对外公开的接口表；lazygit 终端实例保持在模块内部。

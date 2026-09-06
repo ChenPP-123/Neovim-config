@@ -12,7 +12,7 @@ keymap.set("n", "<leader>fr", "<cmd>Telescope projects<CR>", { desc = "Recent pr
 keymap.set("n", "<leader>o", require("oil").toggle_float, { desc = "Open Oil" })
 
 -- 终端与 Git。
-keymap.set("n", "<C-`>", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+keymap.set("n", "<C-`>", "<cmd>execute v:count1 . 'ToggleTerm'<CR>", { desc = "Toggle terminal" })
 keymap.set("n", "<leader>gg", function()
 	require("plugins.lazygit").toggle()
 end, { desc = "切换 LazyGit" })

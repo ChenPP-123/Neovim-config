@@ -353,13 +353,6 @@ return {
 			desc = "Colorschemes",
 		},
 		{
-			"<leader>?",
-			function()
-				require("config.cheatsheet").open()
-			end,
-			desc = "Keymap Cheat Sheet",
-		},
-		{
 			"<C-/>",
 			function()
 				Snacks.terminal()

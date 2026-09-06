@@ -13,6 +13,7 @@ require("plugins.indent-blankline")
 require("plugins.project")
 require("plugins.telescope")
 require("plugins.oil")
+require("plugins.render-markdown")
 require("plugins.tree-sitter")
 
 -- 终端必须先于 LazyGit 的首次调用完成初始化。

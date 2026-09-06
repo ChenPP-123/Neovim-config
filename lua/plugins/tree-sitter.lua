@@ -18,28 +18,32 @@
   - indentexpr：基于语法树的缩进
 ]]
 
-local filetypes = {
-    "lua",
-    "vim",
-    "vimdoc",
-    "python",
-    "json",
-    "html",
-    "yaml",
-    "toml",
-    "markdown",
-}
+return {
+	"nvim-treesitter/nvim-treesitter",
+	lazy = false,
+	build = ":TSUpdate",
+	config = function()
+		local filetypes = {
+			"lua",
+			"vim",
+			"vimdoc",
+			"python",
+			"json",
+			"html",
+			"yaml",
+			"toml",
+			"markdown",
+		}
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = filetypes,
-    callback = function()
-        -- 启用高亮
-        vim.treesitter.start()
-        -- 启用语法树折叠
-        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-        vim.wo[0][0].foldmethod = "expr"
-        vim.wo[0][0].foldlevel = 99             -- 默认展开所有折叠
-        -- 启用indent
-        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    end,
-})
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = filetypes,
+			callback = function()
+				vim.treesitter.start()
+				vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+				vim.wo[0][0].foldmethod = "expr"
+				vim.wo[0][0].foldlevel = 99
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end,
+		})
+	end,
+}

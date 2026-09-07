@@ -1,5 +1,5 @@
 --[[
-新版 nvim-treesitter 负责安装和更新 parser；高亮、折叠等功能由 Neovim 原生 API 启用。
+新版 nvim-treesitter 负责安装和更新 parser
 
 基本用法：
   1. 用 :TSInstall <parser> 安装语言 parser，例如 :TSInstall python typescript tsx。
@@ -14,8 +14,6 @@
 
 本文件在 FileType 事件中为 filetypes 内的文件启用：
   - vim.treesitter.start()：语法高亮。
-  - foldexpr 与 foldmethod：基于语法树的代码折叠。
-  - indentexpr：基于语法树的缩进
 ]]
 
 return {
@@ -34,15 +32,10 @@ return {
 			"toml",
 			"markdown",
 		}
-
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = filetypes,
 			callback = function()
 				vim.treesitter.start()
-				vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-				vim.wo[0][0].foldmethod = "expr"
-				vim.wo[0][0].foldlevel = 99
-				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 			end,
 		})
 	end,

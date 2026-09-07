@@ -5,6 +5,7 @@ return {
 		event = "InsertEnter",
 		main = "blink.cmp",
 		opts = {
+			keymap = { preset = "super-tab" },
 			completion = {
 				list = { selection = { preselect = false } },
 			},

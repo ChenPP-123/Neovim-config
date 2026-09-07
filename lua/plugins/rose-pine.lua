@@ -3,24 +3,18 @@ return {
 	name = "rose-pine",
 	lazy = false,
 	priority = 1001,
-	config = function()
-		require("rose-pine").setup({
-			variant = "auto",
-			dark_variant = "main",
-			dim_inactive_windows = true,
-			extend_background_behind_borders = true,
-			enable = {
-				terminal = true,
-				legacy_highlights = true,
-				migrations = true,
-			},
-			styles = {
-				bold = true,
-				italic = true,
-				transparency = false,
-			},
-		})
-
+	opts = {
+		variant = "auto",
+		dark_variant = "main",
+		dim_inactive_windows = true,
+		extend_background_behind_borders = true,
+		enable = {
+			terminal = true,
+			legacy_highlights = true,
+		},
+	},
+	config = function(opts)
+		require("rose-pine").setup(opts)
 		vim.cmd.colorscheme("rose-pine")
 	end,
 }

@@ -3,9 +3,9 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{
-			"<leader>gh",
+			"<leader>gp",
 			function()
-				require("gitsigns").preview_hunk()
+				require("gitsigns").preview_hunk_inline()
 			end,
 			desc = "Preview Git hunk",
 		},

@@ -40,6 +40,9 @@ return {
 				char = "│",
 			},
 		},
+		notifier = {
+			timeout = 5000,
+		},
 	},
 	keys = {
 		{
@@ -50,25 +53,11 @@ return {
 			desc = "Smart Find Files",
 		},
 		{
-			"<leader>fc",
-			function()
-				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-			end,
-			desc = "Find Config File",
-		},
-		{
 			"<leader>fp",
 			function()
 				Snacks.picker.projects()
 			end,
 			desc = "Projects",
-		},
-		{
-			"<leader>fb",
-			function()
-				Snacks.picker.buffers()
-			end,
-			desc = "Buffers",
 		},
 		{
 			"<leader>fg",

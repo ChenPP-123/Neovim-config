@@ -21,13 +21,4 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = {
-		colorscheme = { "rose-pine" },
-	},
-	rocks = {
-		enabled = false,
-	},
-	change_detection = {
-		notify = false,
-	},
 })

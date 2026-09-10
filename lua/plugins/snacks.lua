@@ -60,6 +60,20 @@ return {
 			desc = "Projects",
 		},
 		{
+			"<leader>fb",
+			function()
+				Snacks.picker.buffers()
+			end,
+			desc = "Buffers",
+		},
+		{
+			"<leader>fc",
+			function()
+				Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+			end,
+			desc = "Config Files",
+		},
+		{
 			"<leader>fg",
 			function()
 				Snacks.picker.grep()

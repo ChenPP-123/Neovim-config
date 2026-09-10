@@ -21,6 +21,10 @@ return {
 			"Saghen/blink.cmp",
 		},
 		config = function()
+			vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {
+				desc = "Show diagnostic",
+			})
+
 			vim.lsp.config("*", {
 				capabilities = require("blink.cmp").get_lsp_capabilities(),
 			})

@@ -54,9 +54,9 @@ return {
 			automatic_enable = servers,
 		})
 
-		-- mason-lspconfig 只管理 LSP；格式化工具由通用安装器补齐。
+		-- mason-lspconfig 只管理 LSP；其余外部工具由通用安装器补齐。
 		require("mason-tool-installer").setup({
-			ensure_installed = { "ruff", "stylua" },
+			ensure_installed = { "ruff", "stylua", "debugpy" },
 			run_on_start = true,
 		})
 

@@ -8,7 +8,10 @@ return {
 			enabled = true,
 			sources = {
 				projects = {
-					dev = {},
+					dev = {
+                        "~/.config",
+                        "~/Workspace",
+                    },
 					recent = true,
 					confirm = { "tcd", "close" },
 				},
@@ -39,9 +42,6 @@ return {
 				enabled = true,
 				char = "│",
 			},
-		},
-		notifier = {
-			timeout = 5000,
 		},
 	},
 	keys = {

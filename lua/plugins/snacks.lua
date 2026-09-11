@@ -9,9 +9,9 @@ return {
 			sources = {
 				projects = {
 					dev = {
-                        "~/.config",
-                        "~/Workspace",
-                    },
+						"~/.config",
+						"~/Workspace",
+					},
 					recent = true,
 					confirm = { "tcd", "close" },
 				},

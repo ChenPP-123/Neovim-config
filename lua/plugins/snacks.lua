@@ -102,7 +102,7 @@ return {
             desc = "File Explorer",
         },
         {
-            "<C-`>",
+            "<C-\\>",
             function()
                 Snacks.terminal()
             end,

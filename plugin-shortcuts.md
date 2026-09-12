@@ -21,7 +21,7 @@
 | `<leader>e` | N | 打开文件浏览器 |
 | `H` | N | 在 Explorer 中显示或隐藏以点开头的文件 |
 | `<leader>gg` | N | 打开 Lazygit 浮动窗口 |
-| ``<C-`>`` | N | 打开或关闭底部终端 |
+| `<C-\>` | N | 打开或关闭底部终端 |
 
 ## Git 操作（Gitsigns）
 

@@ -13,6 +13,18 @@ vim.api.nvim_create_autocmd({
     command = "checktime",
 })
 
+-- 光标停留时显示当前位置的诊断，不抢占编辑焦点。
+vim.api.nvim_create_autocmd("CursorHold", {
+    group = group,
+    callback = function()
+        vim.diagnostic.open_float(nil, {
+            scope = "cursor",
+            focusable = false,
+            focus_id = "cursor_diagnostic",
+        })
+    end,
+})
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = group,
     callback = function()

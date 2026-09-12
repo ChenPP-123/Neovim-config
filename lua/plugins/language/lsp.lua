@@ -52,9 +52,31 @@ return {
             automatic_enable = servers,
         })
 
-        -- Neovim 已提供跳转、重命名等默认 LSP 映射，这里只补充诊断详情入口。
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, {
-            desc = "Show diagnostic",
+        -- 映射只在语言服务器已连接的缓冲区生效，避免占用普通文本的按键。
+        local keymap_group = vim.api.nvim_create_augroup("LspKeymaps", { clear = true })
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = keymap_group,
+            callback = function(event)
+                local function map(keys, action, description)
+                    vim.keymap.set("n", keys, action, {
+                        buffer = event.buf,
+                        desc = "LSP: " .. description,
+                    })
+                end
+
+                map("gd", vim.lsp.buf.definition, "Go to definition")
+                map("gD", vim.lsp.buf.declaration, "Go to declaration")
+                map("gi", vim.lsp.buf.implementation, "Go to implementation")
+                map("gr", vim.lsp.buf.references, "Find references")
+                map("K", vim.lsp.buf.hover, "Hover documentation")
+                map("<leader>k", vim.lsp.buf.signature_help, "Signature help")
+                map("<leader>rn", vim.lsp.buf.rename, "Rename symbol")
+                map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+                map("[d", vim.diagnostic.goto_prev, "Previous diagnostic")
+                map("]d", vim.diagnostic.goto_next, "Next diagnostic")
+                map("<leader>d", vim.diagnostic.open_float, "Show diagnostic")
+                map("<leader>dl", vim.diagnostic.setloclist, "Diagnostic list")
+            end,
         })
     end,
 }

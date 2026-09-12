@@ -1,7 +1,7 @@
 Neovim 插件快捷键
 ==================
 
-本文档记录当前插件配置明确暴露的快捷键，包括插件预设和开关选项生成的映射。
+本文档记录当前插件配置明确暴露的快捷键，包括插件预设生成的映射。
 Neovim 自带快捷键以及 lua/config/keymaps.lua 中的基础编辑映射不在本文档范围内。
 
 按键说明
@@ -13,7 +13,6 @@ Neovim 自带快捷键以及 lua/config/keymaps.lua 中的基础编辑映射不�
   N  普通模式（Normal）
   I  插入模式（Insert）
   X  可视模式（Visual）
-  O  操作符等待模式（Operator-pending）
 
 
 文件查找与工具（Snacks）
@@ -89,26 +88,6 @@ Markdown
 
 快捷键        模式  说明
 <leader>m     N     打开或关闭当前 Markdown 缓冲区的渲染效果
-
-
-中文分词移动（jieba.vim）
--------------------------
-
-jieba.vim 的默认映射已在配置中启用。下面的按键保留 Vim 原有操作形式，
-但会按照中文分词结果识别单词边界。
-
-快捷键                    模式   说明
-w / W                     N/X/O  向后移动到下一个中文词或 WORD
-e / E                     N/X/O  向后移动到当前中文词或 WORD 的末尾
-b / B                     N/X/O  向前移动到中文词或 WORD 的开头
-ge / gE                   N/X/O  向前移动到中文词或 WORD 的末尾
-<C-Left> / <S-Left>       N/X/O  按中文词边界向左移动
-<C-Right> / <S-Right>     N/X/O  按中文词边界向右移动
-iw / iW                   X/O    选择或操作当前中文词或 WORD 的内部
-aw / aW                   X/O    选择或操作当前完整中文词或 WORD
-<C-w>                     I      按中文词边界删除光标前的内容
-
-这些移动支持数字次数和操作符组合，例如 3w、dw、d3w。
 
 
 没有配置快捷键的插件

@@ -47,9 +47,8 @@ return {
             settings = { Lua = {} },
         })
 
-        -- Mason 自动安装并且只启用 Python、Lua 两个语言服务器。
+        -- 语言服务器由根目录安装脚本安装，Mason 只启用本配置声明的服务器。
         require("mason-lspconfig").setup({
-            ensure_installed = servers,
             automatic_enable = servers,
         })
 

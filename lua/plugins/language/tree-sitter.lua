@@ -31,6 +31,7 @@ return {
             "yaml",
             "toml",
             "markdown",
+            "regex",
         }
 
         require("nvim-treesitter").install(filetypes)

@@ -9,6 +9,7 @@ return {
         },
         picker = {
             enabled = true,
+            ui_select = true,
             sources = {
                 projects = {
                     dev = {
@@ -24,6 +25,9 @@ return {
             enabled = true,
             replace_netrw = true,
             trash = true,
+        },
+        image = {
+            enabled = true,
         },
         terminal = {
             win = {

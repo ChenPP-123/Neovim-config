@@ -25,6 +25,7 @@ Neovim 自带快捷键以及 lua/config/keymaps.lua 中的基础编辑映射不�
 <leader>fc    N     查找当前 Neovim 配置目录中的文件
 <leader>fg    N     在项目中搜索文本
 <leader>e     N     打开文件浏览器
+H             N     在 Explorer 中显示或隐藏以点开头的文件
 <leader>gg    N     打开 Lazygit 浮动窗口
 <C-`>         N     打开或关闭底部终端
 

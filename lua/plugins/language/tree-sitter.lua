@@ -17,30 +17,29 @@
 ]]
 
 return {
-  "nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  build = ":TSUpdate",
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
 
-  config = function()
-    local filetypes = {
-      "lua",
-      "vim",
-      "vimdoc",
-      "python",
-      "json",
-      "html",
-      "yaml",
-      "toml",
-      "markdown",
-    }
+    config = function()
+        local filetypes = {
+            "lua",
+            "vim",
+            "vimdoc",
+            "python",
+            "json",
+            "yaml",
+            "toml",
+            "markdown",
+        }
 
-    require("nvim-treesitter").install(filetypes)
+        require("nvim-treesitter").install(filetypes)
 
-    vim.api.nvim_create_autocmd("FileType", {
-      pattern = filetypes,
-      callback = function()
-        vim.treesitter.start()
-      end,
-    })
-  end,
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = filetypes,
+            callback = function()
+                vim.treesitter.start()
+            end,
+        })
+    end,
 }

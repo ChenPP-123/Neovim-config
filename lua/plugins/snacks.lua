@@ -4,6 +4,9 @@ return {
 	priority = 1000,
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
+        notifier = {
+            timeout = 5000,
+        },
 		picker = {
 			enabled = true,
 			sources = {

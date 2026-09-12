@@ -20,5 +20,6 @@ vim.opt.rtp:prepend(lazy_path)
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
+		{ import = "plugins.language" },
 	},
 })

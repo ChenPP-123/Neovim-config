@@ -31,12 +31,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank({ timeout = 500 })
     end,
 })
-
--- 终端缓冲区使用双 Esc 返回 Normal 模式，不影响其他缓冲区。
-vim.api.nvim_create_autocmd("TermOpen", {
-    group = group,
-    pattern = "term://*",
-    callback = function()
-        vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { buffer = 0 })
-    end,
-})

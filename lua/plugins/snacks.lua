@@ -19,6 +19,26 @@ return {
                     recent = true,
                     confirm = { "tcd", "close" },
                 },
+                explorer = {
+                    -- Enter 的 confirm 动作会打开文件或展开目录；h 使用内置动作返回父目录。
+                    -- l 先判断当前项是否目录，只有目录才执行 confirm
+                    actions = {
+                        explorer_open_dir = function(picker, item)
+                            if item and item.dir then
+                                picker:action("confirm")
+                            end
+                        end,
+                    },
+                    win = {
+                        list = {
+                            keys = {
+                                ["<CR>"] = "confirm",
+                                ["h"] = "explorer_up",
+                                ["l"] = "explorer_open_dir",
+                            },
+                        },
+                    },
+                },
             },
         },
         explorer = {

@@ -2,7 +2,8 @@ return {
     {
         "vague2k/vague.nvim",
         lazy = false,
-        priority = 1001,
+        -- 主题必须先于其他启动插件应用高亮。
+        priority = 1000,
         opts = {
             transparent = false,
             bold = true,

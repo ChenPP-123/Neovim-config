@@ -5,7 +5,7 @@ return {
         -- 主题必须先于其他启动插件应用高亮。
         priority = 1000,
         opts = {
-            transparent = false,
+            transparent = true,
             bold = true,
             italic = true,
         },
